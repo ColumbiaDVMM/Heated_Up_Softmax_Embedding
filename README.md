@@ -20,6 +20,5 @@ Bottleneck feature is not learned to be compact and spread-out, thus may not be 
 
 <img src="./fig/off-the-shelf.png" width="400">
 
-## Temperature parameter 
+## Temperature parameter $\alpha$
 
-$ \sum_{\forall i}{x_i^{2}} $
