@@ -4,7 +4,7 @@
 #  File Name: metric_learning_lenet.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-08-2018
-#  Last Modified: Sat Sep  8 15:47:08 2018
+#  Last Modified: Sat Sep  8 23:22:44 2018
 #
 #  Usage: python metric_learning_lenet.py -h
 #  Description:
@@ -260,7 +260,7 @@ for epoch in tqdm(range(training_epochs)):
     if args.heat_up:
         if epoch == args.nb_epoch - args.nb_hu_epoch:
             learning_rate = learning_rate*0.1
-            alpha = alpha*0.25
+            args.alpha = args.alpha*0.25
 
     ## Display logs per epoch step
     if epoch % display_step == 0:

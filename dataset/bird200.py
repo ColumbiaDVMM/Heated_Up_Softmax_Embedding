@@ -4,7 +4,7 @@
 #  File Name: bird200.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 07-09-2018
-#  Last Modified: Fri Sep  7 14:31:57 2018
+#  Last Modified: Sun Sep  9 20:00:12 2018
 #
 #  Usage: python bird200.py -h
 #  Description:

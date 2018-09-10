@@ -4,7 +4,7 @@
 #  File Name: deep_metric_learning_Inception.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-07-2018
-#  Last Modified: Sat Sep  8 11:12:27 2018
+#  Last Modified: Mon Sep 10 16:03:28 2018
 #
 #  Usage: python deep_metric_learning_Inception.py -h
 #  Description:
@@ -259,7 +259,7 @@ if args.optimizer == 'rmsprop':
 elif args.optimizer == 'SGD':
     optimizer_2 = tf.train.MomentumOptimizer(lr_place_holder,momentum=0.9)
 elif args.optimizer == 'ADAM':
-    optimizer_2 = tf.train.AdamOptimizer(learning_rate=lr_place_holder, beta1=0.9, beta2=0.999, epsilon = 1.0)
+    optimizer_2 = tf.train.AdamOptimizer(learning_rate=lr_place_holder, epsilon = 0.01)# beta1=0.9, beta2=0.999, epsilon = 1.0
 else:
     print('Unknown Optimizer')
 
@@ -315,10 +315,14 @@ for step in tqdm(range(int(num_training_sample / training_batch_size)+1)):
 if args.better_init:
     training_embedding, training_normed_embedding,\
             training_logits = get_feature(img_data, num_training_category, alpha)
-    classifier_init_val = np.random.randn(embedding_dim,num_training_category)
-    classifier_init_val = classifier_init_val.astype(np.float32)
-    for i in range(classifier_init_val.shape[1]):
-        classifier_init_val[:,i] = classifier_init_val[:,i]/np.sqrt(np.sum(classifier_init_val[:,i] ** 2)+1e-4)
+    category_mean = utils.get_category_mean(training_embedding, class_id, num_training_category)
+    classifier_init_val = np.zeros((embedding_dim,num_training_category), dtype = np.float32)
+    for i in range(num_training_category):
+        classifier_init_val[:,i] = np.transpose(category_mean[i,:])
+    #classifier_init_val = np.random.randn(embedding_dim,num_training_category)
+    #classifier_init_val = classifier_init_val.astype(np.float32)
+    #for i in range(classifier_init_val.shape[1]):
+    #    classifier_init_val[:,i] = classifier_init_val[:,i]/np.sqrt(np.sum(classifier_init_val[:,i] ** 2)+1e-4)
 
     assign_op = tf.assign(retrieval_layer.out, classifier_init_val)
     sess.run(assign_op)
