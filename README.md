@@ -20,5 +20,67 @@ Bottleneck feature is not learned to be compact and spread-out, thus may not be 
 
 <img src="./fig/off-the-shelf.png" width="400">
 
-## Temperature parameter $\alpha$
+## Temperature Parameter 𝛼
+Applying both ℓ2 normalization to both feature and weight show strong performance in face verification [2,3]. Need temperature parameter 𝛼 for gradient tuning.
+<img src="./fig/new_bottleneck.png" width="400">
 
+Here are some features learned from MNIST with new pipeline. 𝛼 plays an important role in determining the final distribution.
+
+<img src="./fig/distribution.png" width="600">
+
+Consider the magnitude of the gradient with respect to descriptor, different 𝛼 values assign different gradients to different samples.
+
+<img src="./fig/gradient.png" width="500">
+
+## Heated-Up Feature
+At the begining of the training, we need intermediate 𝛼 to assign large gradient to incorrect sample and medium gradient to boundary sample. If 𝛼 is too large (red dash line to the right hand side), boundary sample may not get enough gradient to update, the feature will be not compact. If 𝛼 is too small (red dash line to the right hand side), all samples will have similar gradient, training may not be effective (no "hard mining").
+
+<img src="./fig/Intermediate.png" width="500">
+
+At the end of the training, all the samples are correctly classified. We need small 𝛼 to assign large gradient to all the samples to further compress the distribution.
+
+
+<img src="./fig/heatup.png" width="500">
+
+## Requirements
+
+## Run the code
+
+1) Prepare the data. Run codes in ./dataset/ to download and preprocess the data.
+
+```python
+python ./dataset/car196.py -h
+```
+
+2) Download network from [Tensorflow site](http://download.tensorflow.org/models/inception_v1_2016_08_28.tar.gz) 
+
+3) Check [./tensorflow/run\_Inception.py](tensorflow/run_Inception.py) to see how to run on Car196, Bird200 and Product datasets. 
+
+```python
+python ./tensorflow/run_Inception.py
+```
+
+4) Check [./tensorflow/run\_mnist\_lenet.py](tensorflow/run_mnist_lenet.py) to see how to run on Mnist dataset to get the distribution map.
+
+```python
+python ./tensorflow/run_mnist_lenet.py
+```
+
+## Citation
+
+Please cite us if you find this code useful:
+
+```
+@inproceedings{zhang2017learningb,
+title={Learning Spread-out Local Feature Descriptors},
+author={Zhang, Xu and Yu, Felix X. and Kumar, Sanjiv and Chang, Shih-Fu},
+booktitle={ICCV},
+year={2017}
+}
+```
+## Reference
+[1] Y. Movshovitz-Attias, A. Toshev, T. K. Leung, S. Ioffe, and S. Singh. No Fuss Distance Metric Learning Using Proxies. In ICCV 2017
+
+[2] Wang, Feng, Xiang Xiang, Jian Cheng, and Alan L. Yuille. NormFace: L2 Hypersphere Embedding for Face Verification. In ACM MM 2017
+
+[3] Liu, Weiyang, Yandong Wen, Zhiding Yu, et al. SphereFace: Deep Hypersphere Embedding for Face Recognition. In CVPR 2017
