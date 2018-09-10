@@ -22,6 +22,7 @@ Bottleneck feature is not learned to be compact and spread-out, thus may not be 
 
 ## Temperature Parameter 𝛼
 Applying both ℓ2 normalization to both feature and weight show strong performance in face verification [2,3]. Need temperature parameter 𝛼 for gradient tuning.
+
 <img src="./fig/new_bottleneck.png" width="400">
 
 Here are some features learned from MNIST with new pipeline. 𝛼 plays an important role in determining the final distribution.
@@ -43,6 +44,7 @@ At the end of the training, all the samples are correctly classified. We need sm
 <img src="./fig/heatup.png" width="500">
 
 ## Requirements
+See [./requirements.txt](requirements.txt)
 
 ## Run the code
 

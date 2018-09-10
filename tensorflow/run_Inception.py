@@ -4,7 +4,7 @@
 #  File Name: run_Inception.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-07-2018
-#  Last Modified: Mon Sep 10 19:08:11 2018
+#  Last Modified: Mon Sep 10 19:10:05 2018
 #
 #  Usage: python run_Inception.py
 #  Description:
@@ -77,7 +77,7 @@ parameter_set = [
 #                '--dataset=ebay --l2_norm --norm_weights --normed_test --alpha=16.0 \
 #                        --learning_rate=0.01 --optimizer=ADAM --better_init \
 #                        --fast_kmeans --heat_up --nb_hu_epoch=20', #Heated_up L2Norm
-                ]
+#                ]
 
 number_gpu = len(gpu_set)
 process_set = []
