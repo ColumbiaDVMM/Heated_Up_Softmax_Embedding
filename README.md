@@ -54,7 +54,7 @@ See [./requirements.txt](requirements.txt)
 python ./dataset/car196.py -h
 ```
 
-2) Download network from [Tensorflow site](http://download.tensorflow.org/models/inception_v1_2016_08_28.tar.gz) 
+2) Download inception_v1 from [Tensorflow site](http://download.tensorflow.org/models/inception_v1_2016_08_28.tar.gz), and save it in ./data/model/.
 
 3) Check [./tensorflow/run\_Inception.py](tensorflow/run_Inception.py) to see how to run on Car196, Bird200 and Product datasets. 
 
