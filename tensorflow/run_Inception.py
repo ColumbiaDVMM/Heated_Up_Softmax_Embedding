@@ -4,7 +4,7 @@
 #  File Name: run_Inception.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-07-2018
-#  Last Modified: Tue Sep 11 17:06:49 2018
+#  Last Modified: Wed Sep 12 21:07:06 2018
 #
 #  Usage: python run_Inception.py
 #  Description:
@@ -26,7 +26,7 @@ gpu_set = ['0', '1']
 #For car196 dataset
 parameter_set = [
                 '--normed_test --alpha=1.0 --learning_rate=0.004 --optimizer=SGD ', #Softmax baseline
-                '--normed_test --alpha=1.0 --learning_rate=0.004 --optimizer=SGD --label_smoothing', #No-Fuss static anchor setting
+                '--normed_test --alpha=1.0 --learning_rate=0.004 --optimizer=SGD --label_smoothing', #Similar to No-Fuss static anchor setting
                 '--bn --norm_weights --normed_test --alpha=16.0 --learning_rate=0.004 --optimizer=SGD', #BN
                 '--bn --norm_weights --normed_test --alpha=16.0 --learning_rate=0.004 --optimizer=SGD\
                         --heat_up --nb_hu_epoch=20', #Heated-up BN
@@ -41,7 +41,7 @@ parameter_set = [
 #                        --learning_rate=0.004 --optimizer=SGD ', #Softmax baseline
 #
 #                '--dataset=bird200 --normed_test --alpha=1.0 --learning_rate=0.004 \
-#                        --optimizer=SGD --label_smoothing', #No-Fuss static anchor
+#                        --optimizer=SGD --label_smoothing', #Similar to No-Fuss static anchor
 #
 #                '--dataset=bird200 --bn --norm_weights --normed_test --alpha=16.0 \
 #                        --learning_rate=0.004 --optimizer=SGD', #BN
@@ -62,7 +62,7 @@ parameter_set = [
 #                       --optimizer=ADAM --better_init --fast_kmeans ', #Softmax baseline
 #
 #                '--dataset=ebay --normed_test --alpha=1.0 --learning_rate=0.01 \
-#                        --optimizer=ADAM --better_init --fast_kmeans --label_smoothing', #No-Fuss static anchor
+#                        --optimizer=ADAM --better_init --fast_kmeans --label_smoothing', #Similar to No-Fuss static anchor
 #
 #                '--dataset=ebay --bn --norm_weights --normed_test --alpha=16.0 \
 #                        --learning_rate=0.01 --optimizer=ADAM --better_init --fast_kmeans', #BN
