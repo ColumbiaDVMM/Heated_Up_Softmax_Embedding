@@ -4,7 +4,7 @@
 #  File Name: run_Inception.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-07-2018
-#  Last Modified: Mon Sep 10 22:51:57 2018
+#  Last Modified: Tue Sep 11 17:06:49 2018
 #
 #  Usage: python run_Inception.py
 #  Description:

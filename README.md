@@ -1,4 +1,6 @@
 # Heated-Up Softmax Embedding
+Project page for [Heated-Up Softmax Embedding](https://arxiv.org/abs/1809.04157v1)
+
 <img src="./fig/car196.png" width="500">
 
 ## Introduction
@@ -73,11 +75,11 @@ python ./tensorflow/run_mnist_lenet.py
 Please cite us if you find this code useful:
 
 ```
-@inproceedings{zhang2017learningb,
-title={Learning Spread-out Local Feature Descriptors},
-author={Zhang, Xu and Yu, Felix X. and Kumar, Sanjiv and Chang, Shih-Fu},
-booktitle={ICCV},
-year={2017}
+@inproceedings{zhang2018Heated,
+title={Heated-Up Softmax Embedding},
+author={Zhang, Xu and Yu, Felix X. and Karaman, Svebor and Zhang, Wei and Chang, Shih-Fu},
+booktitle={arXiv preprint arXiv:1809.04157v1},
+year={2018}
 }
 ```
 ## Reference
