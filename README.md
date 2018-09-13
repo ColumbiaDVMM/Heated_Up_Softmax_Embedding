@@ -1,5 +1,6 @@
 # Heated-Up Softmax Embedding
-Project page for [Heated-Up Softmax Embedding](https://arxiv.org/abs/1809.04157v1)
+Project page for [Heated-Up Softmax Embedding](https://arxiv.org/abs/1809.04157v1). We propose a “heating-up” strategy to train a classifier with increasing temperatures, leading the corresponding embeddings to achieve state-of-the-art performance on a variety of metric learning benchmarks.
+
 
 <img src="./fig/car196.png" width="500">
 
