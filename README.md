@@ -37,7 +37,7 @@ Consider the magnitude of the gradient with respect to descriptor, different �
 <img src="./fig/gradient.png" width="500">
 
 ## Heated-Up Feature
-At the begining of the training, we need intermediate 𝛼 to assign large gradient to incorrect sample and medium gradient to boundary sample. If 𝛼 is too large (red dash line to the right hand side), boundary sample may not get enough gradient to update, the feature will be not compact. If 𝛼 is too small (red dash line to the right hand side), all samples will have similar gradient, training may not be effective (no "hard mining").
+At the begining of the training, we need intermediate 𝛼 to assign large gradient to incorrect sample and medium gradient to boundary sample. If 𝛼 is too large (red dash line to the right hand side), boundary sample may not get enough gradient to update, the feature will be not compact. If 𝛼 is too small (red dash line to the left hand side, close to 0), all samples will have similar gradient, training may not be effective (no "hard mining").
 
 <img src="./fig/Intermediate.png" width="500">
 
